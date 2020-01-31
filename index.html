@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!-- As if this Glitch were a typical HTML CodePen... -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+
+    <!-- Use components defined in separate files. -->
+    <script src="arrow-key-rotation.js"></script>
+    <script src="play-on-window-click.js"></script>
+    <script src="play-on-vrdisplayactivate-or-enter-vr.js"></script>
+    <script src="hide-once-playing.js"></script>
+    <script src="seek-video.js"></script>
+
+    <!-- Specify our scene. -->
+    <a-scene>
+        <!-- The original example also has this 180 degree rotation, to appear to be going forward. -->
+        <a-videosphere rotation="0 180 0" src="#video" play-on-window-click play-on-vrdisplayactivate-or-enter-vr>
+        </a-videosphere>
+
+        <a-box position="-1 0.5 0.5" depth="0.5" height="0.5" width="0.5" color="#FFF65D" seek-video-on-box-click
+            event-set__mouseenter="_event: mouseenter; color: #026fc9"
+            event-set__leave="_event: mouseleave; color: #EF2D5E">
+        </a-box>
+
+        <a-box position="0 3.5 -2" rotation="30 30 0" color="skyblue"
+            event-set__mouseenter="_event: mouseenter; color: #026fc9"
+            event-set__leave="_event: mouseleave; color: #EF2D5E"
+            animation__click="property: scale; from: 1 1 1; to: 3 1 1; easing: easeInCubic; dur: 300; startEvents: click"
+            animation__clickreset="property: scale; to: 1 1 1; dur: 300; startEvents: animationcomplete__click">
+        </a-box>
+
+        <!-- Import 3D object, cors blocked for now
+        <a-assets>
+            <a-asset-item id="pylon" src="pylon.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-entity position="0.5 0.5 -1" gltf-model="#pylon"></a-entity> -->
+
+        <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
+        <a-camera cursor="rayOrigin: mouse" user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
+            <!-- Text element for display messaging.  Hide once video is playing. -->
+            <a-entity id="msg" position="0 -0.3 -1.5" text="align:center; 
+                width:3;
+                wrapCount:100;
+                color:red;
+                value:Click window to make the video play, if needed." hide-once-playing="#video">
+            </a-entity>
+        </a-camera>
+
+        <!-- Wait for the video to load. -->
+        <a-assets>
+            <!-- Single source video. -->
+            <video id="video" style="display:none" loop autoplay crossorigin="anonymous" preload="auto" playsinline
+                webkit-playsinline>
+                <!-- MP4 video source. -->
+                <source type="video/mp4" src="https://ucarecdn.com/fadab25d-0b3a-45f7-8ef5-85318e92a261/" />
+            </video>
+        </a-assets>
+    </a-scene>
+
+    <!-- Show a button to switch to the multi-source example that shows detail. -->
+    <button onClick="window.location.href='multi-source-detail.html'" style="position:absolute;top:10px;right:10px;">
+        Switch to multi-source detail example
+    </button>
+</body>
+
+</html>
