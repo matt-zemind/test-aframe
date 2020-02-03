@@ -12,6 +12,7 @@
     <script src="play-on-vrdisplayactivate-or-enter-vr.js"></script>
     <script src="hide-once-playing.js"></script>
     <script src="seek-video.js"></script>
+    <script src="loop-video-on-box-click.js"></script>
 
     <!-- Specify our scene. -->
     <a-scene>
@@ -19,9 +20,28 @@
         <a-videosphere rotation="0 180 0" src="#video" play-on-window-click play-on-vrdisplayactivate-or-enter-vr>
         </a-videosphere>
 
+        <a-plane rotation="0 0 0" position="-2 2 -4" height="1" width="1" src="#pic1"></a-plane>
+        <a-plane rotation="0 0 0" position="-1 2 -4" height="1" width="1" src="#pic2"></a-plane>
+        <a-plane rotation="0 0 0" position="0 2 -4" height="1" width="1" src="#pic3"></a-plane>
+        <a-plane rotation="0 0 0" position="1 2 -4" height="1" width="1" src="#pic4"></a-plane>
+        <a-plane rotation="0 0 0" position="2 2 -4" height="1" width="1" src="#pic5"></a-plane>
+        <a-plane rotation="0 0 0" position="-2 1 -4" height="1" width="1" src="#pic6"></a-plane>
+        <a-plane rotation="0 0 0" position="-1 1 -4" height="1" width="1" src="#pic7"></a-plane>
+        <a-plane rotation="0 0 0" position="0 1 -4" height="1" width="1" src="#pic8"></a-plane>
+        <a-plane rotation="0 0 0" position="1 1 -4" height="1" width="1" src="#pic9"></a-plane>
+        <a-plane rotation="0 0 0" position="2 1 -4" height="1" width="1" src="#pic10"></a-plane>
+        <a-plane rotation="0 0 0" position="-2 0 -4" height="1" width="1" src="#pic11"></a-plane>
+        <a-plane rotation="0 0 0" position="-1 0 -4" height="1" width="1" src="#pic12"></a-plane>
+        <a-plane rotation="0 0 0" position="0 0 -4" height="1" width="1" src="#pic13"></a-plane>
+        <a-plane rotation="0 0 0" position="1 0 -4" height="1" width="1" src="#pic14"></a-plane>
+        <a-plane rotation="0 0 0" position="2 0 -4" height="1" width="1" src="#pic15"></a-plane>
+
         <a-box position="-1 0.5 0.5" depth="0.5" height="0.5" width="0.5" color="#FFF65D" seek-video-on-box-click
             event-set__mouseenter="_event: mouseenter; color: #026fc9"
             event-set__leave="_event: mouseleave; color: #EF2D5E">
+        </a-box>
+
+        <a-box position="-1 2 0.5" depth="0.5" height="0.5" width="0.5" loop-video-on-box-click>
         </a-box>
 
         <a-box position="0 3.5 -2" rotation="30 30 0" color="skyblue"
@@ -55,8 +75,53 @@
             <video id="video" style="display:none" loop autoplay crossorigin="anonymous" preload="auto" playsinline
                 webkit-playsinline>
                 <!-- MP4 video source. -->
-                <source type="video/mp4" src="video.mp4" />
+                <source type="video/mp4" src="https://ucarecdn.com/fadab25d-0b3a-45f7-8ef5-85318e92a261/" />
             </video>
+            <img id="pic1" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic2" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic3" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic4" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic5" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic6" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic7" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic8" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic9" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic10" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic11" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic12" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic13" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic14" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
+            <img id="pic15" crossorigin="anonymous"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg">
+            </img>
         </a-assets>
     </a-scene>
 
